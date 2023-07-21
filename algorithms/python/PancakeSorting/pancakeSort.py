@@ -10,8 +10,7 @@ def pancakeSort(self, A):
     n = len(A)
     while A:
         smallest = A.index(min(A))
-        res.append(smallest + 1)
-        res.append(len(A))
+        res.extend((smallest + 1, len(A)))
         A = list(reversed(A[:smallest + 1])) + A[smallest + 1:]
         A.reverse()
         del A[-1]

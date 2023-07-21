@@ -5,7 +5,7 @@ def largeGroupPositions(self, S):
         if S[i] == S[i + 1] and S[i] == S[i + 2]:
             val = S[i]
             index = i
-            while i < len(S) and S[i] == val:
+            while i < len(S) and val == val:
                 i += 1
             res.append([index, i - 1])
             i -= 1

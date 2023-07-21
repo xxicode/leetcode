@@ -3,9 +3,7 @@
 def hasGroupsSizeX(self, deck):
     if len(deck) < 2: return False
     vals = collections.Counter(deck).values()
-    for n in range(2, max(vals) + 1):
-        if all(v % n == 0 for v in vals): return True
-    return False
+    return any(all(v % n == 0 for v in vals) for n in range(2, max(vals) + 1))
 
 # Method 2: find the greatest common divisor using reduce
 # Time complexity: O(n)

@@ -5,8 +5,10 @@ def isCompleteTree(self, root):
         children = []
         for node, value in stack[-1]:
             if node.left: children.append((node.left, 2 * value))
-            if node.right: children.append((node.right, 2 * value + 1))
-            if node.right and not node.left: return False
+            if node.right:
+                children.append((node.right, 2 * value + 1))
+                if not node.left:
+                    return False
         if not children: break
         if len(stack[-1]) != pow(2, layer): return False
         stack.append(children)

@@ -1,6 +1,6 @@
 def removeNthFromEnd(self, head, n):
     slow = fast = head
-    for i in range(n):
+    for _ in range(n):
         fast = fast.next
     if not fast: return head.next
     while fast.next:

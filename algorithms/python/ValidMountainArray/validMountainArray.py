@@ -3,12 +3,11 @@
 def validMountainArray(self, A):
     if len(A) < 3: return False
     index = A.index(max(A))
-    if index == 0 or index == len(A) -1: return False
+    if index in [0, len(A) - 1]: return False
     for i in range(1, len(A)):
         if i <= index:
             if A[i] <= A[i - 1]: return False
-        else:
-            if A[i] >= A[i - 1]: return False
+        elif A[i] >= A[i - 1]: return False
     return True
 
 
