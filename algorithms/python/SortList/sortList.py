@@ -18,9 +18,7 @@ def mergeSorted(self, a, b):
             dummy.next = b
             dummy = b
             b = b.next
-    if not a: dummy.next = b
-    else: dummy.next = a
-
+    dummy.next = b if not a else a
     return res.next
     
 def split(self, node):

@@ -12,8 +12,7 @@ def fib1(self, N):
 Method 2: recursive without memorization:
 """
 def fib2(self, N):
-    if N <= 1: return N
-    return self.fib(N - 1) + self.fib(N - 2)
+    return N if N <= 1 else self.fib(N - 1) + self.fib(N - 2)
 
 """
 Method 3: recursive with memorization

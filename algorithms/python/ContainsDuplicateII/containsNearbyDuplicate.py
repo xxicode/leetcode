@@ -5,10 +5,10 @@ def containsNearbyDuplicate(self, nums, k):
     if k == 0: return False
     s = set(nums[:k])
     for i in range(k, len(nums)):
-        if nums[i] in s: return True
-        else:
-            s.remove(nums[i - k])
-            s.add(nums[i])
+        if nums[i] in s:
+            if nums[i] in s: return True
+        s.remove(nums[i - k])
+        s.add(nums[i])
     return False
 
 # Method 2: using dictionary

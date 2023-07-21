@@ -1,10 +1,6 @@
 def maxDistToClosest(self, seats):
     first = seats.index(1)
-    last = 0
-    for i in range(len(seats) - 1, -1, -1):
-        if seats[i]: 
-            last = i
-            break
+    last = next((i for i in range(len(seats) - 1, -1, -1) if seats[i]), 0)
     res = 0
     temp = 0
     for i in range(first, last + 1):

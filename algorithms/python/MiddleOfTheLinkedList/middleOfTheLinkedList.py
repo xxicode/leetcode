@@ -12,10 +12,7 @@ class Solution:
             cont += 1
             aux = aux.next
         print(cont)
-        if cont%2 == 0:
-            posicao = (cont/2)+1
-        else:
-            posicao = (cont//2)+1
+        posicao = (cont/2)+1 if cont%2 == 0 else (cont//2)+1
         aux = head
         cont = 1
         while True:

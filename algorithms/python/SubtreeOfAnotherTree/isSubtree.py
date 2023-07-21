@@ -8,8 +8,13 @@ def isSubtree(self, s, t):
     return False
 
 def check(self, first, second):
-    if not first and not second:
+    if first or second:
+        return (
+            first.val == second.val
+            and self.check(first.left, second.left)
+            and self.check(first.right, second.right)
+            if first and second
+            else False
+        )
+    else:
         return True
-    if first and second:
-        return first.val == second.val and self.check(first.left, second.left) and self.check(first.right, second.right)
-    return False
